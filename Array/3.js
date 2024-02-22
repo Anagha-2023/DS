@@ -1,13 +1,12 @@
-//Find DUplicates
+const nums = [4, 1, 2, 1, 2];
 
-const arr = [1,2,3,4,5,1,2,3];
+function findSingleNonDuplicate(nums) {
 
-var FindDuplicates = function (arr){
-  for (let i=0;i<arr.length;i++){
-    for (let j=i+1;j<arr.length-1;j++){
-      if (arr[i]===arr[j]){
-        
-      }
-    }
+  let result = 0;
+  for (let num of nums) {
+      result ^= num; 
   }
+  return result;
 }
+
+console.log(findSingleNonDuplicate(nums));
