@@ -1,22 +1,22 @@
-class Node{
-  constructor(data){
+class Node {
+  constructor(data) {
     this.data = data;
     this.next = null;
   }
 }
 
-class Linkedlist{
-  constructor(){
+class Linkedlist {
+  constructor() {
     this.head = null;
     this.tail = null;
   }
 
-  addNode(data){
+  addNode(data) {
     const newNode = new Node(data);
 
-    if(this.head === null){
+    if (this.head === null) {
       this.head = newNode;
-    }else{
+    } else {
       this.tail.next = newNode;
     }
     this.tail = newNode
@@ -26,28 +26,30 @@ class Linkedlist{
     let current = this.head;
 
     while (current !== null) {
-        let nextNode = current.next;
+      let nextNode = current.next;
 
-        while (nextNode !== null && nextNode.data === current.data) {
-            nextNode = nextNode.next;
-        }
-        current.next = nextNode;
+      while (nextNode !== null && nextNode.data == current.data) {
+        nextNode = nextNode.next;
+      }
+      current.next = nextNode;
 
-        if (nextNode === null && current === this.tail) {
-            this.tail = current;
-        }
-        current = nextNode;
+      if (nextNode === this.tail && nextNode.data == current.data) {
+        this.tail = current;
+        this.tail.next = null
+      }
+
+      current = nextNode;
     }
-}
+  }
 
 
-  print(){
+  print() {
     let temp = this.head;
     const values = []
-    if(this.head === null){
+    if (this.head === null) {
       console.log("Empty");
     }
-    while(temp!==null){
+    while (temp !== null) {
       values.push(temp.data);
       temp = temp.next;
     }
@@ -56,7 +58,7 @@ class Linkedlist{
 }
 
 const list = new Linkedlist();
-list.addNode(5);
+list.addNode(10);
 list.addNode(10);
 list.addNode(10);
 list.addNode(15);

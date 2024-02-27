@@ -1,74 +1,74 @@
-class Node{
-  constructor(data){
+class Node {
+  constructor(data) {
     this.data = data;
     this.next = null;
     this.prev = null;
   }
 }
 
-class Linkedlist{
-  constructor(){
+class Linkedlist {
+  constructor() {
     this.head = null;
     this.tail = null;
   }
 
-  addNode(data){
+  addNode(data) {
 
     const newNode = new Node(data);
-    if(this.head ===null){
-       this.head = newNode;
-    }else{
-      this.tail.next =  newNode;
+    if (this.head === null) {
+      this.head = newNode;
+    } else {
+      this.tail.next = newNode;
       newNode.prev = this.tail;
     }
     this.tail = newNode;
 
   }
 
-  DeleteNode(data){
+  DeleteNode(data) {
     let temp = this.head;
 
-    if(temp!==null && temp.data == data){
+    if (temp !== null && temp.data == data) {
       this.head = temp.next;
-      if(this.head!==null){
+      if (this.head !== null) {
         this.head.prev = null;
-      }if(temp == null){
+      } if (temp == null) {
         return
-      }if(temp == this.tail){
+      } if (temp == this.tail) {
         this.tail = null;
       }
       return;
     }
 
-    while(temp!==null && temp.data!==data){
+    while (temp !== null && temp.data !== data) {
       temp = temp.next;
     }
-    if(temp===null){
+    if (temp === null) {
       return;
     }
-    if(temp == this.tail){
+    if (temp == this.tail) {
       this.tail = temp.prev;
       this.tail.next = null;
-    }else{
+    } else {
       temp.prev.next = temp.next;
       temp.next.prev = temp.prev;
     }
   }
 
-  printForward(){
+  printForward() {
     let temp = this.head;
-    const values =[];
-    while(temp!==null){
+    const values = [];
+    while (temp !== null) {
       values.push(temp.data);
       temp = temp.next
     }
     console.log(values);
   }
 
-  printBackward(){
+  printBackward() {
     let temp = this.tail;
     const values = [];
-    while(temp!==null){
+    while (temp !== null) {
       values.push(temp.data);
       temp = temp.prev;
     }
