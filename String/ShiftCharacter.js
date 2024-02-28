@@ -19,5 +19,5 @@ function shiftedChar(inputstring,shiftamt){
   return result;
 }
 
-const inputstring = "Haiii Mariyaa";
+const inputstring = "Haiii";
 console.log(shiftedChar(inputstring,2));
