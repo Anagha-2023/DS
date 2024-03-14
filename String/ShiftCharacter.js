@@ -13,7 +13,7 @@ function shiftedChar(inputstring,shiftamt){
       shiftedCharCOde = ((shiftedCharCOde-65)%26+26)%26+65;
     }
 
-    result+= String.fromCharCode(shiftedCharCOde); v
+    result+= String.fromCharCode(shiftedCharCOde);
 
   }
   return result;
