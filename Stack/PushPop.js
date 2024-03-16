@@ -66,3 +66,10 @@ console.log(myStack.isEmpty());
 myStack.print();
 
 
+
+
+
+
+
+
+
