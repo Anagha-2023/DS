@@ -1,4 +1,4 @@
-const arr = [2,3,1,4,8,5];
+const arr = [16,56,12,10,78,100];
 
 function Selectionsort(arr){
   for(let i=0;i<arr.length;i++){

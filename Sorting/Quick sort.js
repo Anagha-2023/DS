@@ -38,6 +38,6 @@ function swap(arr,i,j){
   arr[j] = temp;
 }
 
-const arr = [3,4,61,2,9,4,3];
+const arr = [16,56,12,10,78,100];
 let result = QuickSort(arr);
 console.log(result);
