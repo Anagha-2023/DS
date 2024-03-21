@@ -14,4 +14,5 @@ function BubbleSort(arr){
   
   return arr;
 }
-console.log(BubbleSort(arr));
+let result = BubbleSort(arr);
+console.log(result);
