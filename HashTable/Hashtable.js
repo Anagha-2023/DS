@@ -28,7 +28,7 @@ class HashTable{
 
   display(){
     for(let i=0;i<this.table.length;i++){
-      if(this.table[i]!==null){
+      if(this.table[i]!==undefined){
         console.log(i,this.table[i]);
       }
     }
