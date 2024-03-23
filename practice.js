@@ -33,7 +33,7 @@ class Queue{
     }
   }
 
-  print() {
+  display() {
     let temp = this.front;
 
     if (this.front === null) {
@@ -52,4 +52,4 @@ myQueue.enqueue(10);
 myQueue.enqueue(20);
 myQueue.enqueue(30);
 myQueue.enqueue(40);
-myQueue.print();
+myQueue.display();
