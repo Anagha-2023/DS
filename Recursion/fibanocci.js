@@ -8,3 +8,4 @@ function fibonacci(n){
 
 const n=6;
 console.log(fibonacci(n));
+

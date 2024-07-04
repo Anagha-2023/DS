@@ -13,6 +13,6 @@ function CoutnCharectors(str){
   return charCount;
 }
 
-const str = "Anagha";
+const str = "Hello";
 const result = CoutnCharectors(str);
 console.log(result);

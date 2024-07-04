@@ -1,43 +1,23 @@
-function QuickSort(arr,startIndx=0,endIndex=arr.length-1){
-  quicksortHelper(arr, startIndx, endIndex);
-  return arr;
-}
-
-function quicksortHelper(arr,startIndx,endIndex){
-  if(startIndx>=endIndex){
-    return;
+function quickSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
   }
 
-  let PivotIndx = startIndx;
-  let leftIndx = startIndx+1;
-  let rightIndx = endIndex;
+  let pivot = arr[arr.length - 1];
 
-  while (leftIndx<=rightIndx) {
-    if(arr[leftIndx]>arr[PivotIndx] && arr[rightIndx]<arr[PivotIndx]){
-      swap(arr,leftIndx,rightIndx);
-      leftIndx++;
-      rightIndx--;
-    }
-    if(arr[leftIndx]<=arr[PivotIndx]){
-      leftIndx++;
-    }
-    if(arr[rightIndx]>=arr[PivotIndx]){
-      rightIndx--;
+  let left = [];
+  let right = [];
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
     }
   }
 
-  swap(arr,rightIndx,PivotIndx);
-  quicksortHelper(arr,startIndx,rightIndx-1);
-  quicksortHelper(arr,rightIndx+1,endIndex);
-
+  return [...quickSort(left), pivot, ...quickSort(right)];
 }
 
-function swap(arr,i,j){
-  let temp = arr[i];
-  arr[i] = arr[j];
-  arr[j] = temp;
-}
-
-const arr = [16,56,12,10,78,100];
-let result = QuickSort(arr);
-console.log(result);
+const arr = [3, 6, 8, 10, 1, 2, 1];
+console.log(quickSort(arr)); 
